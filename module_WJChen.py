@@ -13,8 +13,12 @@ def require_fccd_intensity(time_interval, scan_num):
         time_interval: time interval between two pictures
         scan_num: integer
     [return]
-        
+        return a tuple variable (t, signal_area, background_area) where
+            t: numpy array, time
+            signal_area: numpy array, the counts of signal area
+            background_area: numpy array, the counts of background area
     [example]
+        (t, signal_area, background_area) = require_fccd_intensity(2, 95831)
     
     [author]
         Wenjie Chen
