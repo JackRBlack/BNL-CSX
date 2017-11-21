@@ -1,3 +1,6 @@
+import numpy as np
+import codecs, json 
+
 def write_data(FILEPATH, *args):
     ''' 
     [function]
@@ -45,7 +48,6 @@ def read_data(FILEPATH):
     [author]
         Wenjie Chen
     '''
-    import codecs, json 
     obj_data = codecs.open(FILEPATH, 'r', encoding='utf-8').read()
     temp = json.loads(obj_data)
     data = []

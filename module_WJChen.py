@@ -1,8 +1,9 @@
 # The decay of CDW signal. by Wenjie Chen
 
 import numpy as np
-from databroker import DataBroker as db, get_table
+#from databroker import DataBroker as db, get_table
 import matplotlib.pyplot as plt
+import codecs, json 
 
 
 def require_fccd_intensity(time_interval, scan_num):
@@ -66,7 +67,7 @@ def calculate_relative_intensity(signal_area, area_size1, background_area, area_
     return signal_area/area_size1 - background_area/area_size2
 
 def plot_decay_curve(t, relative_intensity):
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(8, 5))
     plt.plot(t, relative_intensity)
     plt.xlabel('t / s')
     plt.ylabel('relative intensity')
@@ -94,7 +95,6 @@ def save_decay_data(t, signal_area, background_area, FILEPATH):
     [author]
         Wenjie Chen
     '''
-    import codecs, json 
     t_tol = t.tolist()
     signal_area_tol = signal_area.tolist()
     background_area_tol = background_area.tolist()
